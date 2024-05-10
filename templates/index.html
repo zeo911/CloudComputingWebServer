@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Book Library</title>
+</head>
+<body>
+    <h1>Book Library</h1>
+    <h2>Add New Book</h2>
+    <form action="/add" method="post">
+        <input type="text" name="book_id" >
+        Name: <input type="text" name="name"><br>
+        Author: <input type="text" name="author"><br>
+        Category: <input type="text" name="category"><br>
+        Copies: <input type="number" name="copies"><br>
+        <input type="submit" value="Add Book">
+    </form>
+    <h2>Books List</h2>
+    <ul>
+        {% for book in books %}
+        <li>{{ book[2] }} by {{ book[3] }} - {{ book[1] }} ({{ book[4] }} copies)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
